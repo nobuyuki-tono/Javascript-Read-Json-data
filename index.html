@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+       <title>Javascript Json</title>
+      
+       <!-- <base href="" target="_blank"> -->
+           
+         <!-- <style>
+             
+         </style>
+            -->
+        <noscript>
+           Your browser doesn't support JavaScript or it is diabled, at this time - Sonder requires JavaScript and a HTML5/CSS3 compatible browser. 
+        </noscript>
+        <meta charset="UTF-8">
+        <meta name="keywords"content="json">
+        <meta name="description" 
+           content="this website read json data">
+        <meta name="author" content="Nobu">
+        <meta name="generator" content="Visuam Studio Code">
+        <meta name="application-name" content="read json data">
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        
+     </head>
+     <body>
+       <div class="mypanel"></div>
+
+
+       <script>
+         $.getJSON('http://time.jsontest.com', function(data){
+           var text = `Date: ${data.date}<br>
+                       Time: ${data.time}<br>
+                       Unix time: ${data.milliseconds_since_epoch}`
+            
+            $(".mypanel").html(text);
+         });
+
+
+         var person = {"name": "John",
+                       "age" : 35,
+                       "Country": "Japan"};
+         console.log(person);
+
+         var x = JSON.stringify({person});
+
+         console.log(x);
+         console.log(typeof x);
+
+         var json = '{"result":true, "count":42}';
+         obj = JSON.parse(json);
+
+         console.log(obj.count);
+       </script>
+
+     </body>
+
+</html>
